@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Greet/>
+      <Greet name={"Ashish"}/>
     </>
   )
 }

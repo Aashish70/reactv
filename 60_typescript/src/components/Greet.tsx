@@ -1,9 +1,13 @@
+// use type while building application and Interface while building library
 
+type GreetProps = {
+    name: string
+}
 
-function Greet() {
+function Greet({ name } : GreetProps ) {
   return (
     <div>
-        <h2>Welcome Ashish! You have 10 unread messages.</h2>
+        <h2>Welcome { name }! You have 10 unread messages.</h2>
     </div>
   )
 }
