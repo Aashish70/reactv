@@ -1,7 +1,10 @@
 import './App.css'
 import Greet from './components/Greet'
+import Heading from './components/Heading'
+import Oscar from './components/Oscar'
 import Person from './components/Person'
 import PersonList from './components/PersonList'
+import Status from './components/Status'
 
 function App() {
 
@@ -33,6 +36,12 @@ function App() {
       <Greet name={"Ashish"} messageCount={20} isLoggedIn={false}/>
       <Person name={personName} />
       <PersonList name={nameList} />
+      <Status status='loading' />
+      <Heading>Placeholder text</Heading>
+      <Oscar>
+        <Heading>Oscar goes to Leonardo Dicpario!</Heading>
+      </Oscar>
+      <Greet name={"Ashish"}  isLoggedIn={true}/>
     </>
   )
 }
