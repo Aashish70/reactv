@@ -1,0 +1,25 @@
+import './App.css'
+import withBorder from './hoc/withBorder'
+import Alpha from './components/Alpha';
+import Beta from './components/Beta';
+import withCardLook from './hoc/withCardLook'
+
+// HOC - complex logic & complex ui reuse
+
+function App() {
+
+  const WithCardLookAlpha = withCardLook(Alpha);
+  const WithCardLookBeta = withCardLook(Beta);
+
+  const WithBorderLookAlpha = withBorder(Alpha)
+
+  return (
+    <>
+      <WithCardLookAlpha/>
+      <WithCardLookBeta/>
+      <WithBorderLookAlpha />
+    </>
+  )
+}
+
+export default App
