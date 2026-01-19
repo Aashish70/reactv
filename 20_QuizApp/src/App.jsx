@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import './App.css'
-import Question from './question.json'
-
-
+import React, { useState } from "react";
+import "./App.css";
+import Timer from "./components/Timer";
+import Question from "./components/Question";
+import Result from "./components/Result";
 
 function App() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isOver, setIsOver] = useState(false);
+  const [score, setScore] = useState(0);
+
+  console.log(score)
 
   return (
     <>
-      <h1>Quiz App</h1>
-
-
+      {!isOver ? (
+        <div>
+          <Timer setIsOver={setIsOver} />
+          <Question
+            setIsOver={setIsOver}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            setScore={setScore}
+          />
+        </div>
+      ) : (
+        <Result score={score} setIsOver={setIsOver} setCurrentIndex={setCurrentIndex} />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
